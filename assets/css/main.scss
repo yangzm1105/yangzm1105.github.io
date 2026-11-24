@@ -108,81 +108,29 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
-/* Education: ordinary Markdown heading and list in about.md. */
-.page__content {
-    #education,
-    #education + ul {
-        background-color: #f0f3f7;
-        background-image: linear-gradient(rgba(255, 255, 255, .55) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255, 255, 255, .55) 1px, transparent 1px);
-        background-size: 40px 40px;
+/* Keep the normal Markdown list; position its logo beside the text. */
+.page__content #education + ul {
+    li {
+        position: relative;
+        min-height: 160px;
+        padding-left: calc(160px + 1em);
     }
 
-    #education {
-        margin: 2em 0 0;
-        padding: .7em 1em;
-        border: 0;
-        color: #4c5055;
-        font-size: 1.8em;
-        scroll-margin-top: 2em;
-
-        &:before {
-            content: "\f19d";
-            display: inline-block;
-            position: static;
-            width: auto;
-            height: auto;
-            margin: 0 .65em 0 0;
-            color: #a0a5aa;
-            font-family: "Font Awesome 5 Free";
-            font-size: .85em;
-            font-weight: 900;
-        }
-    }
-
-    #education + ul {
-        margin: 0;
-        padding: 0 1.5em 1.75em;
-        list-style: none;
-
-        li {
-            position: relative;
-            min-height: 160px;
-            margin: 0 0 1.5em;
-            padding-left: calc(160px + 1.5em);
-            color: #4c5055;
-            font-size: 1.4em;
-            font-weight: 600;
-            line-height: 1.55;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        p {
-            margin: 0 0 .25em;
-        }
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-        }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 160px;
+        height: 160px;
+        object-fit: contain;
     }
 }
 
 @media (max-width: 600px) {
     .page__content #education + ul {
-        padding: 0 1.1em 1.1em;
-
         li {
             min-height: 82px;
             padding-left: calc(82px + 1em);
-            font-size: 1.1em;
         }
 
         img {
